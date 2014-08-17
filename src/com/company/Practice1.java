@@ -1,10 +1,13 @@
 package com.company;
 
-import java.util.ArrayList;
+public class Practice1 {
 
-public class Main {
+//    ---------------------------------
+//    声明变量，操作符，执行流程控制
+//    ---------------------------------
 
     public static void main(String[] args) {
+
         //定义整型
         int a = 5; //5 = 0000 0101
         int b = 3; //3 = 0000 0011
@@ -85,64 +88,6 @@ public class Main {
             System.out.println("b = " + b);
         }
 
-        //-------------数组-------------
-        String [] names ={"James", "Larry", "Tom", "Lacy"};
-        for (String name : names) {
-            System.out.println(name);
-        }
-
-        //-------------集合-------------
-        ArrayList<Egg> eggs = new ArrayList<Egg>();
-
-        //向集合中加入元素
-        Egg eggOne = new Egg();
-        Egg eggTwo = new Egg();
-        eggs.add(eggOne);
-        eggs.add(eggTwo);
-
-        //查询集合的大小
-        int theSize = eggs.size();
-        System.out.println(theSize);
-
-        //查询特定元素是否存在
-        boolean isIn = eggs.contains(eggOne);
-        System.out.println(isIn);
-
-        //查询特定元素的位置
-        int index = eggs.indexOf(eggTwo);
-        System.out.println(index);
-
-        //判断集合是都为空
-        boolean empty = eggs.isEmpty();
-        System.out.println(empty);
-
-        //删除元素
-        eggs.remove(eggOne);
-        System.out.println(eggs.size());
-
-        //值引用
-        //基本类型作为参数传递
-        String s1 = "hello";
-        System.out.println("before change: " + s1);
-        changeOne(s1);
-        System.out.println("after change: " + s1);
-
-        //对象作为参数传递
-        StringBuffer stringBuffer = new StringBuffer("hello");
-        System.out.println("before change: " + stringBuffer);
-        changeTwo(stringBuffer);
-        System.out.println("after change: " + stringBuffer);
-
     }
-
-    private static void changeTwo(StringBuffer stringBuffer) {
-        stringBuffer.append("world");
-    }
-
-    private static String changeOne(String s) {
-        s += "world";
-        return s;
-    }
-
 
 }
