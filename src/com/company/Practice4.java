@@ -36,7 +36,7 @@ public class Practice4 {
 
         Collections.sort(users, new Comparator<User>(){
             public int compare(User user1, User user2) {
-                return user1.getOrder().compareTo(user2.getOrder());
+                return user1.compareTo(user2);
             }
         });
 

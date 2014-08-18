@@ -20,7 +20,7 @@ public class User {
         this.order = order;
     }
 
-    public int compareTo(User arg0) {
-        return this.getOrder().compareTo(arg0.getOrder());
+    public int compareTo(User user) {
+        return this.getOrder().compareTo(user.getOrder());
     }
 }
