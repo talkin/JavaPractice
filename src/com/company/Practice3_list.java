@@ -2,13 +2,10 @@ package com.company;
 
 import com.company.model.User;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 
-public class Practice3_list {
+public class Practice3_List {
 
     public static void main(String[] args) {
 
@@ -58,7 +55,7 @@ public class Practice3_list {
 
         Collections.sort(users, new Comparator<User>() {
             public int compare(User user1, User user2) {
-                return user1.compareTo(user2);
+                return user1.getOrder().compareTo(user2.getOrder());
             }
         });
 

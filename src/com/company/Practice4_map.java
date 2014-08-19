@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.*;
 
-public class Practice4_map {
+public class Practice4_Map {
 
     public static void main(String[] args) {
 
@@ -11,6 +11,8 @@ public class Practice4_map {
         map.put("b", "bbb");
         map.put("c", "ccc");
         map.put("d", "ddd");
+
+        System.out.println("map的大小 ：" + map.size());
 
         Iterator iterator = map.keySet().iterator();
         while (iterator.hasNext()) {
@@ -45,6 +47,9 @@ public class Practice4_map {
             Object key = iterator_tree.next();
             System.out.println("tmp.get(key) is :"+tmp.get(key));
         }
+
+
+
 
     }
 }

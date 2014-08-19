@@ -2,7 +2,7 @@ package com.company;
 
 import java.io.*;
 
-public class Practice5 {
+public class Practice6 {
 
 //    ---------------------------------
 //    流 ：数据的序列
