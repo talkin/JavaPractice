@@ -1,54 +1,58 @@
 package com.company;
 
-import com.company.model.User;
-
-import java.util.ArrayList;
-import java.util.List;
-
-
 public class Practice2 {
 
 //    ---------------------------------
-//    数组 & 集合
+//    值与引用
 //    ---------------------------------
 
     public static void main(String[] args) {
+        //值引用
+        //基本类型作为参数传递
+        String s1 = "hello";
+        System.out.println("before change: " + s1);
+        changeOne(s1);
+        System.out.println("after change: " + s1);
 
-        //-------------数组-------------
-        String [] names ={"James", "Larry", "Tom", "Lacy"};
-        System.out.println("遍历数组中的元素 : ");
-        for (String name : names) {
-            System.out.println(name);
+        //对象作为参数传递
+        StringBuffer stringBuffer = new StringBuffer("hello");
+        System.out.println("before change: " + stringBuffer);
+        changeTwo(stringBuffer);
+        System.out.println("after change: " + stringBuffer);
+
+        // 创建不同类型数组： Integer, Double 和 Character
+        Integer[] intArray = { 1, 2, 3, 4, 5 };
+        Double[] doubleArray = { 1.1, 2.2, 3.3, 4.4 };
+        Character[] charArray = { 'H', 'E', 'L', 'L', 'O' };
+
+
+        //泛型
+        System.out.println( "\nArray integerArray contains:" );
+        printArray( intArray  ); // 传递一个整型数组
+
+        System.out.println( "\nArray doubleArray contains:" );
+        printArray( doubleArray ); // 传递一个双精度型数组
+
+        System.out.println( "\nArray characterArray contains:" );
+        printArray( charArray ); // 传递一个字符型型数组
+    }
+
+    private static void changeTwo(StringBuffer stringBuffer) {
+        stringBuffer.append("world");
+    }
+
+    private static String changeOne(String s) {
+        s += "world";
+        return s;
+    }
+
+    // 泛型方法 printArray
+    public static < E > void printArray( E[] inputArray )
+    {
+        // 输出数组元素
+        for ( E element : inputArray ){
+            System.out.printf( "%s ", element );
         }
-
-        //-------------集合-------------
-        List<User> users = new ArrayList<User>();
-
-        //向集合中加入元素
-        User userOne = new User();
-        User userTwo = new User();
-        users.add(userOne);
-        users.add(userTwo);
-
-        //查询集合的大小
-        int theSize = users.size();
-        System.out.println("查询集合的大小 : " + theSize);
-
-        //查询特定元素是否存在
-        boolean isIn = users.contains(userOne);
-        System.out.println("查询特定元素是否存在 : " +isIn);
-
-        //查询特定元素的位置
-        int index = users.indexOf(userTwo);
-        System.out.println("查询指定元素 : " + index);
-
-        //判断集合是都为空
-        boolean empty = users.isEmpty();
-        System.out.println("判断集合是都为空 : " + empty);
-
-        //删除元素
-        users.remove(userOne);
-        System.out.println("删除元素 : " + users.size());
-
+        System.out.println();
     }
 }

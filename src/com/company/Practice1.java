@@ -88,6 +88,13 @@ public class Practice1 {
             System.out.println("b = " + b);
         }
 
+        //-------------数组-------------
+        String [] names ={"James", "Larry", "Tom", "Lacy"};
+        System.out.println("遍历数组中的元素 : ");
+        for (String name : names) {
+            System.out.println(name);
+        }
+
     }
 
 }
