@@ -6,18 +6,18 @@ public class Practice4_Map {
 
     public static void main(String[] args) {
 
-        Map map=new HashMap();
-        map.put("a", "aaa");
-        map.put("b", "bbb");
-        map.put("c", "ccc");
-        map.put("d", "ddd");
+        Map<String, String> maps=new HashMap<String, String>();
+        maps.put("a", "aaa");
+        maps.put("b", "bbb");
+        maps.put("c", "ccc");
+        maps.put("d", "ddd");
 
-        System.out.println("map的大小 ：" + map.size());
+        System.out.println("map的大小 ：" + maps.size());
 
-        Iterator iterator = map.keySet().iterator();
+        Iterator iterator = maps.keySet().iterator();
         while (iterator.hasNext()) {
             Object key = iterator.next();
-            System.out.println("map.get(key) is :"+map.get(key));
+            System.out.println("map.get(key) is :" + maps.get(key));
         }
 
         System.out.println("\n");

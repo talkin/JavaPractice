@@ -88,8 +88,6 @@ public class Practice1 {
             System.out.println("b = " + b);
         }
 
-
-
     }
 
 }

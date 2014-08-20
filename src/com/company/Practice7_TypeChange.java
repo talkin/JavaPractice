@@ -17,6 +17,9 @@ public class Practice7_TypeChange {
 
         //Double, Float, Long 转成字串的方法类似
 
+        //转换规则:从存储范围大的类型到存储范围小的类型。
+        //具体规则为：double→float→long→int→short(char)→byte
+
 
 
 
