@@ -41,9 +41,9 @@ public class Practice8_Generics {
         printInfo(note2);
 
 
-        //-----test------
+        System.out.println("-----------------test--------------------");
         ArrayList<String> list1 = new ArrayList();
-        list1.add("1");
+        list1.add("2");
         //list1.add(1);   编译错误
         String s = list1.get(0);
         System.out.println(s);
@@ -51,13 +51,25 @@ public class Practice8_Generics {
 
 
         ArrayList list2 = new ArrayList<String>();
-        list2.add(1);
+        list2.add(3);
         Object o = list2.get(0);
         System.out.println(o);
 
         ArrayList list3 = new ArrayList();
         list3.add("1");
 
+
+
+        Print print = new Print();
+        String o1 = "111111111111";
+        print.show(o1);
+
+        choose(print);
+
+    }
+
+    private static void choose(Object o) {
+        System.out.println("22222222222222");
     }
 
     // <?>可以接收任意的泛型对象 (通配符)
@@ -75,4 +87,16 @@ public class Practice8_Generics {
         System.out.println();
     }
 
+
+    static class Print<T extends String> {
+        public T show(T content) {
+            System.out.println(content);
+            return content;
+        }
+
+    }
+
+
+
 }
+
