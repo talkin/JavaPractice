@@ -3,6 +3,7 @@ package com.company;
 import com.company.model.Note;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Practice8_Generics {
     public static void main(String[] args) {
@@ -62,9 +63,28 @@ public class Practice8_Generics {
 
         Print print = new Print();
         String o1 = "111111111111";
-        print.show(o1);
+        print.show(123);
+        print.show(123f);
+        print.show(123.00);
 
         choose(print);
+
+        List<? extends Number> numbers = new ArrayList<Number>();
+//        List<Number> numbers1 = new ArrayList<? extends Number>();//不可行
+
+        List<? super Number> integers = new ArrayList<Number>();
+        integers.add(11);
+        Object o2 = integers.get(0);
+
+        List<? extends Number> n1 = new ArrayList<Integer>();
+
+//        List<Number> numbers1 = new ArrayList<? extends Number>();//不可行
+        List<? extends Number> numbers2 = new ArrayList<Integer>();
+        List<? extends Object> numbers3 = new ArrayList<Integer>();
+//        numbers.add(11);//不可行
+    }
+
+    private void testA(List<? extends Number> numbers) {
 
     }
 
@@ -88,7 +108,7 @@ public class Practice8_Generics {
     }
 
 
-    static class Print<T extends String> {
+    static class Print<T extends Number> {
         public T show(T content) {
             System.out.println(content);
             return content;
