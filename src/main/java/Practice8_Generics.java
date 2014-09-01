@@ -2,6 +2,7 @@ import model.Note;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Practice8_Generics {
     public static void main(String[] args) {
@@ -60,26 +61,36 @@ public class Practice8_Generics {
 
 
         Print print = new Print();
-        String o1 = "111111111111";
+        String s1 = "111111111111";
         print.show(123);
         print.show(123f);
         print.show(123.00);
 
         choose(print);
 
-        List<? extends Number> numbers = new ArrayList<Number>();
-//        List<Number> numbers1 = new ArrayList<? extends Number>();//不可行
+        //extends
+//        List<Number> numbers2 = new ArrayList<? extends Number>();
+        List<? extends Number> numbers1 = new ArrayList<Number>();
+//        numbers1.add(123);//添加任何东西都不可以
+        numbers1.add(null);
+
+        //super
+//        List<Object> list = new ArrayList<Integer>();//错
+        Objects object = null;
 
         List<? super Number> integers = new ArrayList<Number>();
-        integers.add(11);
+        integers.add(123);
+//        Number o1 = integers.get(0);//错，不能确定得到的数据是什么类型的
+        Number o11 = (Number)integers.get(0);//强制类型转换为需要的类型
+        Integer o3 = (Integer)integers.get(0);
+        double d1 = (double)integers.get(0);
         Object o2 = integers.get(0);
 
-        List<? extends Number> n1 = new ArrayList<Integer>();
+        List<? super Number> s2 = new ArrayList<Number>();
+        s2.add(12);//所添加的数据只能是Number或者Number的子类，以保证它是Number和Number所有父类的子类。
+        s2.add(12f);
+//        s2.add("1");//错
 
-//        List<Number> numbers1 = new ArrayList<? extends Number>();//不可行
-        List<? extends Number> numbers2 = new ArrayList<Integer>();
-        List<? extends Object> numbers3 = new ArrayList<Integer>();
-//        numbers.add(11);//不可行
     }
 
     private void testA(List<? extends Number> numbers) {
