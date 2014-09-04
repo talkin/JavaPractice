@@ -83,19 +83,18 @@ public class Practice8_Generics {
 //        Number o1 = integers.get(0);//错，不能确定得到的数据是什么类型的
         Number o11 = (Number)integers.get(0);//强制类型转换为需要的类型
         Integer o3 = (Integer)integers.get(0);
-        double d1 = (double)integers.get(0);
-        Object o2 = integers.get(0);
+//        double d1 = (double)integers.get(0);
+//        Object o2 = integers.get(0);
 
-        List<? super Number> s2 = new ArrayList<Number>();
-        s2.add(12);//所添加的数据只能是Number或者Number的子类，以保证它是Number和Number所有父类的子类。
-        s2.add(12f);
+//        List<? super Number> s2 = new ArrayList<Number>();
+//        s2.add(12);//所添加的数据只能是Number或者Number的子类，以保证它是Number和Number所有父类的子类。
+//        s2.add(12f);
 //        s2.add("1");//错
-
     }
 
-    private void testA(List<? extends Number> numbers) {
-
-    }
+//    private void testA(List<? extends Number> numbers) {
+//
+//    }
 
     private static void choose(Object o) {
         System.out.println("22222222222222");
