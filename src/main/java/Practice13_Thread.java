@@ -1,7 +1,7 @@
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
-public class Practice12_Thread {
+public class Practice13_Thread {
 
     static Logger logger = Logger.getLogger(Practice10_Log4j.class);
 

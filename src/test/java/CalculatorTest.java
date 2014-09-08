@@ -36,4 +36,5 @@ public class CalculatorTest {
         double result = calculator.calculate("8/4+2*2");
         assertThat(result, is(8.0));
     }
+
 }

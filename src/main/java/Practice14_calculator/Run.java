@@ -4,30 +4,25 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 public class Run {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Calculator calculator = new Calculator();
 
         while (true) {
             System.out.println("please input expression:");
             String expression = getInput();
             double result;
-            try {
-                result = calculator.calculate(expression);
-                System.out.println(result);
-            } catch (Exception e) {
-                System.out.println("something wrong");
-            }
+            result = calculator.calculate(expression);
+            System.out.println(result);
         }
     }
 
-    private static String getInput() {
+    private static String getInput() throws Exception {
         InputStreamReader inputStreamReader = new InputStreamReader(System.in);
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
         try {
             return bufferedReader.readLine();
         } catch (Exception e) {
-            System.out.println("error");
+            throw new Exception("something wrong.");
         }
-        return null;
     }
 }

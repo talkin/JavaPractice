@@ -30,18 +30,20 @@ public enum Operation {
     };
 
     private String operator;
+
     Operation(String operator) {
         this.operator = operator;
     }
 
     abstract double execute(double one, double two);
 
-    public static Operation getOperation(String operator) {
-        for (Operation operation : values() ) {
+    public static Operation getOperation(String operator) throws Exception {
+        for (Operation operation : values()) {
             if (operation.operator.equals(operator)) {
                 return operation;
             }
         }
-        return null;
+        throw new Exception("wrong");
     }
+
 }
